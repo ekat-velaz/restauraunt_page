@@ -38,6 +38,7 @@ function createNav() {
 
     const homeBtn = document.createElement('button');
     homeBtn.classList.add('nav-btn');
+    homeBtn.setAttribute('id', 'home-btn');
     homeBtn.textContent = 'HOME';
     homeBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains('active')) {
@@ -50,6 +51,7 @@ function createNav() {
 
     const menuBtn = document.createElement('button');
     menuBtn.classList.add('nav-btn');
+    menuBtn.setAttribute('id', 'menu-btn');
     menuBtn.textContent = 'MENU';
     menuBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains('active')) {
@@ -79,7 +81,7 @@ function createNav() {
     return nav;
 };
 
-function setActiveBtn(button) {
+export function setActiveBtn(button) {
     const buttons = document.querySelectorAll('.nav-btn');
 
     buttons.forEach((button) => {
@@ -127,4 +129,9 @@ export function showWebsite() {
     content.appendChild(createHeader());
     content.appendChild(createMain());
     content.appendChild(createFooter());
+
+    const homeBtn = document.getElementById('home-btn');
+
+    setActiveBtn(homeBtn);
+    showHome();
 };

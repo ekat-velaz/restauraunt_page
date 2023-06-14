@@ -1,4 +1,5 @@
 import { showMenu } from "./menu";
+import { setActiveBtn } from "./website";
 
 export function showHome() {
     const main = document.getElementById('main');
@@ -22,7 +23,9 @@ function createHome() {
     orderBtn.setAttribute('id', 'order-btn');
     orderBtn.textContent = 'Order now!';
     orderBtn.addEventListener('click', () => {
+        const menuBtn = document.getElementById('menu-btn');
         showMenu();
+        setActiveBtn(menuBtn);
     });
 
     hero.appendChild(heroHeader);

@@ -1,8 +1,9 @@
-import logoPicture from './images/logo.png';
+import logoPicture from './images/logo-biege.png';
 import githubLogo from './images/github.svg';
 import { showHome } from './home';
 import { showMenu } from './menu';
 import { showContact } from './contact';
+import './style.css';
 
 function createHeader() {
     const header = document.createElement('header');
@@ -19,15 +20,15 @@ function createLogo() {
     logo.setAttribute('id', 'logo');
 
     const logoName = document.createElement('div');
-    logo.setAttribute('id', 'logo-name');
-    logo.textContent = 'BURGER PLACE';
+    logoName.setAttribute('id', 'logo-name');
+    logoName.textContent = 'BURGER PLACE';
 
     const logoPic = new Image(50, 50);
     logoPic.src = logoPicture;
     logoPic.setAttribute('id', 'logo-pic');
 
-    logo.appendChild(logoName);
     logo.appendChild(logoPic);
+    logo.appendChild(logoName);
 
     return logo;
 };

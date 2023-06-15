@@ -11,21 +11,28 @@ import milkshake from './images/milkshake.jpg';
 import icedTea from './images/icedtea.jpg';
 import lemonade from './images/lemonade.jpg';
 import soda from './images/soda.jpg';
+import './style.css';
 
 export function showMenu() {
     const main = document.getElementById('main');
     main.textContent = '';
-    main.appendChild(createHeaderMenu());
-    main.appendChild(createBurgerMenu());
-    main.appendChild(createSidesMenu());
-    main.appendChild(createDrinksMenu());
+
+    const menuContainer = document.createElement('div');
+    menuContainer.setAttribute('id', 'menu-container');
+
+    menuContainer.appendChild(createHeaderMenu());
+    menuContainer.appendChild(createBurgerMenu());
+    menuContainer.appendChild(createSidesMenu());
+    menuContainer.appendChild(createDrinksMenu());
+
+    main.appendChild(menuContainer);
 };
 
 function createHeaderMenu() {
     const menuHeader = document.createElement('div');
     menuHeader.setAttribute('id', 'menu-header');
 
-    const headerLogo = new Image(50,50);
+    const headerLogo = new Image(70,70);
     headerLogo.src = logoPicture;
     headerLogo.setAttribute('id', 'header-logo');
     
@@ -33,19 +40,19 @@ function createHeaderMenu() {
     headerText.setAttribute('id', 'header-text');
     headerText.textContent = 'Choose your meal';
 
-    menuHeader.appendChild(headerText);
     menuHeader.appendChild(headerLogo);
+    menuHeader.appendChild(headerText);
 
     return menuHeader;
 };
 
 function createBurgerMenu() {
     const burgerContainer = document.createElement('div');
-    burgerContainer.classList.add('menu-container');
+    burgerContainer.classList.add('type-menu-container');
 
     const burgerHeader = document.createElement('div');
     burgerHeader.classList.add('item-container-header');
-    burgerContainer.textContent = 'Burgers';
+    burgerHeader.textContent = 'Burgers';
     burgerContainer.appendChild(burgerHeader);
 
     burgerContainer.appendChild(
@@ -98,11 +105,11 @@ function createBurgerMenu() {
 
 function createSidesMenu() {
     const sidesContainer = document.createElement('div');
-    sidesContainer.classList.add('menu-container');
+    sidesContainer.classList.add('type-menu-container');
 
     const sidesHeader = document.createElement('div');
     sidesHeader.classList.add('item-container-header');
-    sidesContainer.textContent = 'Sides';
+    sidesHeader.textContent = 'Sides';
     sidesContainer.appendChild(sidesHeader);
 
     sidesContainer.appendChild(
@@ -137,11 +144,11 @@ function createSidesMenu() {
 
 function createDrinksMenu() {
     const drinksContainer = document.createElement('div');
-    drinksContainer.classList.add('menu-container');
+    drinksContainer.classList.add('type-menu-container');
 
     const drinksHeader = document.createElement('div');
     drinksHeader.classList.add('item-container-header');
-    drinksContainer.textContent = 'Drinks';
+    drinksHeader.textContent = 'Drinks';
     drinksContainer.appendChild(drinksHeader);
 
     drinksContainer.appendChild(
@@ -187,8 +194,11 @@ function createMenuItem(nameItem, text, price, picSrc, link) {
     const item = document.createElement('div');
     item.classList.add('item-container');
 
+    const itemTextContainer = document.createElement('div');
+    itemTextContainer.classList.add('item-text-container');
+
     const itemName = document.createElement('div');
-    item.classList.add('item-name');
+    itemName.classList.add('item-name');
     itemName.textContent = nameItem;
 
 
@@ -200,13 +210,14 @@ function createMenuItem(nameItem, text, price, picSrc, link) {
     itemPrice.classList.add('item-price');
     itemPrice.textContent = price;
 
-    const itemPic = new Image(100, 100);
+    const itemPic = new Image(150, 150);
     itemPic.src = picSrc;
     itemPic.classList.add('item-pic');
 
-    item.appendChild(itemName);
-    item.appendChild(itemText);
-    item.appendChild(itemPrice);
+    itemTextContainer.appendChild(itemName);
+    itemTextContainer.appendChild(itemText);
+    itemTextContainer.appendChild(itemPrice);
+    item.appendChild(itemTextContainer)
     item.appendChild(itemPic);
 
     return item;

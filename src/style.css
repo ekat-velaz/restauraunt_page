@@ -1,4 +1,279 @@
-.hello {
-    background-color: blueviolet;
-    color: white;
+/* Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* General space styling */
+@font-face {
+    font-family: "Oswald" ;
+    src: url(/src/Oswald/Oswald-VariableFont_wght.ttf);
+}
+
+:root {
+    --burgundy: #643843;
+    --lightburgundy: #99627A;
+    --lighterBurgundy: #C88EA7;
+    --biege: #E7CBCB;
+	--transparentBurgundy:#63384391 ;
+	--transparentLightBurg: #99627aab;
+	--transparentLighterBurg:#c88ea7d6 ;
+	--transparentBiege: #e7cbcbc6;
+    font-family: "Oswald";
+}
+
+body {
+	height: 100vh;
+	background-image: url(/src/images/backgroundfood.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+#content {
+	height: 100%;
+	display: grid;
+	align-content: space-between;
+}
+
+/* Header styling */
+#header {
+	background-color: var(--lightburgundy);
+	display: grid;
+	grid-auto-flow: column;
+	place-items: center;
+	gap: 20px;
+	padding: 30px;
+}
+
+#logo {
+	display: grid;
+	grid-auto-flow: column;
+	place-items: center;
+	gap: 20px;
+}
+
+#logo-name {
+	color: var(--biege);
+	font-size: 32px;
+}
+
+#nav {
+	display: grid;
+	grid-auto-flow: column;
+	place-items: center;
+	gap: 20px;
+}
+
+.nav-btn {
+	background-color: var(--biege);
+	color: var(--burgundy);
+	font-size: 20px;
+	width: 100px;
+	height: 40px;
+	border-radius: 3px;
+}
+
+.active {
+	border-bottom: solid 10px var(--burgundy);
+}
+
+/* Footer styling */
+#footer {
+	background-color: var(--burgundy);
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 10px;
+	color: var(--biege);
+}
+
+/* Main styling */
+#main {
+	display: grid;
+	place-content: center;
+	place-items: center;
+}
+
+/* Home page styling */
+#hero {
+	display: grid;
+	gap:20px;
+	place-content: center;
+	place-items: center;
+	width: 50%;
+	height: 80%;
+	background-color: var(--transparentLighterBurg);
+	padding:50px;
+	border-radius: 15px;
+}
+
+#hero-header {
+    font-size: 38px;
+	color: var(--burgundy);
+	font-weight: bold;
+	text-align: center;
+}
+
+#hero-text {
+	font-size: 24px;
+	text-align: center;
+	color: var(--biege);
+	line-height: 35px;
+}
+
+#order-btn {
+	background-color: var(--burgundy);
+	color: var(--biege);
+	font-size: 20px;
+	width: 100px;
+	height: 40px;
+	border-radius: 3px;
+}
+
+/* Contacts page styling */
+#contacts-container {
+	display: grid;
+	gap:20px;
+	place-content: center;
+	place-items: center;
+	width: 80%;
+	height: 80%;
+	background-color: var(--transparentLighterBurg);
+	padding:50px;
+	border-radius: 15px;
+}
+
+#contact-header {
+	font-size: 32px;
+	color: var(--biege);
+	font-weight: bold;
+	text-align: center;
+}
+
+#contacts-text-container {
+	display: grid;
+	gap: 10px;
+	place-content: center;
+	place-items: center;
+	color: var(--burgundy);
+}
+
+/* Menu styling */
+
+#menu-container {
+	display: grid;
+	gap:50px;
+	place-content: center;
+	place-items: center;
+	width: 70%;
+	margin: 50px;
+	background-color: var(--transparentBiege);
+	padding:50px;
+	border-radius: 15px;
+}
+
+#menu-header {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 30px;
+	place-content: center;
+	place-items: center;
+	font-size: 38px;
+	color: var(--burgundy);
+	font-weight: bold;
+}
+
+.type-menu-container {
+	display: grid;
+	gap:30px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.item-container-header {
+	font-size: 38px;
+	place-content: center;
+	place-items: center;
+	color: var(--burgundy);
+}
+
+.item-container {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 15%;
+}
+
+.item-text-container {
+	display: grid;
+	gap:10px;
+	font-size: 20px;
+}
+
+.item-name,
+.item-price {
+	font-size: 22px;
+	color: var(--burgundy);
+}
+
+.item-pic {
+	border-radius: 30px;
 }

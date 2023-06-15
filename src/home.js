@@ -1,5 +1,6 @@
 import { showMenu } from "./menu";
 import { setActiveBtn } from "./website";
+import './style.css';
 
 export function showHome() {
     const main = document.getElementById('main');

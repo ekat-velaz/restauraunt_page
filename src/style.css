@@ -295,15 +295,17 @@ body {
   gap: 20px;
   place-content: center;
   place-items: center;
-  width: 70%;
-  height: 70%;
+  width: 50vw;
+  height: 40vh;
   background-color: var(--transparentLighterBurg);
   padding: 50px;
   border-radius: 15px;
+  text-align: center;
 }
 
 #contact-header {
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: max(3vw, 28px);
   color: var(--biege);
   font-weight: bold;
   text-align: center;
@@ -315,6 +317,15 @@ body {
   place-content: center;
   place-items: center;
   color: var(--burgundy);
+  font-size: max(2vw, 18px);
+}
+
+#contacts-container > img {
+  /* width: max(60vw, 300px);
+  height: max(40vh, 200px); */
+  width: 100%;
+  height: fit-content;
+  object-fit: contain;
 }
 
 /* Menu styling */
@@ -324,7 +335,7 @@ body {
   gap: 50px;
   place-content: center;
   place-items: center;
-  width: 70%;
+  width: 70vw;
   margin: 50px;
   margin-bottom: 100px;
   background-color: var(--transparentBiege);
@@ -341,6 +352,7 @@ body {
   font-size: 38px;
   color: var(--burgundy);
   font-weight: bold;
+  font-size: max(3vw, 28px);
 }
 
 .type-menu-container {
@@ -366,7 +378,8 @@ body {
 .item-text-container {
   display: grid;
   gap: 10px;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: max(2vw, 18px);
 }
 
 .item-name,
@@ -377,4 +390,11 @@ body {
 
 .item-pic {
   border-radius: 30px;
+}
+
+@media (max-width: 600px) {
+  .item-container {
+    grid-auto-flow: row;
+    gap: 10px;
+  }
 }

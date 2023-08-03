@@ -162,6 +162,7 @@ input[type="reset"] {
 
 body {
   height: 100vh;
+  width: 100vw;
   background-image: url(/src/images/backgroundfood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,6 +172,7 @@ body {
 
 #content {
   height: 100%;
+  width: 100%;
   display: grid;
   align-content: space-between;
   grid-template-rows: 1fr 5fr 1fr;
@@ -183,7 +185,7 @@ body {
   grid-auto-flow: column;
   place-items: center;
   gap: 20px;
-  padding: 30px;
+  padding: max(2vw, 20px);
   position: sticky;
   top: 0;
 }
@@ -197,8 +199,12 @@ body {
 
 #logo-name {
   color: var(--biege);
-  font-size: 32px;
+  font-size: max(3vw, 20px);
 }
+
+/* #logo-pic {
+  widt
+} */
 
 #nav {
   display: grid;
@@ -210,8 +216,8 @@ body {
 .nav-btn {
   background-color: var(--biege);
   color: var(--burgundy);
-  font-size: 20px;
-  width: 100px;
+  font-size: max(1.5vw, 15px);
+  width: max(10vw, 60px);
   height: 40px;
   border-radius: 3px;
 }
@@ -238,6 +244,7 @@ body {
 
 /* Main styling */
 #main {
+  width: 100%;
   display: grid;
   place-content: center;
   place-items: center;
@@ -249,22 +256,24 @@ body {
   gap: 20px;
   place-content: center;
   place-items: center;
-  width: 50%;
-  height: 80%;
+  width: 50vw;
+  height: fit-content;
   background-color: var(--transparentLighterBurg);
   padding: 50px;
   border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 #hero-header {
-  font-size: 38px;
+  font-size: max(3vw, 28px);
   color: var(--burgundy);
   font-weight: bold;
   text-align: center;
 }
 
 #hero-text {
-  font-size: 24px;
+  font-size: max(2vw, 18px);
   text-align: center;
   color: var(--biege);
   line-height: 35px;
